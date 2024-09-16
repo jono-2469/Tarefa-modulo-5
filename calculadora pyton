@@ -1,0 +1,41 @@
+# Função para realizar operações matemáticas com números recebidos do usuário
+def operacoes_matematicas():
+    while True:
+        # Recebendo os números de entrada e convertendo para float
+        try:
+            num1 = float(input("Digite o primeiro número: "))
+            num2 = float(input("Digite o segundo número: "))
+        except ValueError:
+            print("Por favor, insira valores válidos.")
+            continue
+        
+        # Menu de operações
+        print("\nEscolha a operação que deseja realizar:")
+        print("1. Adição")
+        print("2. Subtração")
+        print("3. Multiplicação")
+        print("4. Divisão")
+        print("5. Sair")
+
+        operacao = input("Digite o número da operação desejada: ")
+
+        # Verificando a operação escolhida e realizando o cálculo
+        if operacao == '1':
+            print(f"Resultado da Adição: {num1} + {num2} = {num1 + num2}\n")
+        elif operacao == '2':
+            print(f"Resultado da Subtração: {num1} - {num2} = {num1 - num2}\n")
+        elif operacao == '3':
+            print(f"Resultado da Multiplicação: {num1} * {num2} = {num1 * num2}\n")
+        elif operacao == '4':
+            if num2 != 0:
+                print(f"Resultado da Divisão: {num1} / {num2} = {num1 / num2}\n")
+            else:
+                print("Erro: Divisão por zero não é permitida.\n")
+        elif operacao == '5':
+            print("Encerrando o programa.")
+            break
+        else:
+            print("Operação inválida. Tente novamente.\n")
+
+# Executar a função de operações matemáticas
+operacoes_matematicas()
